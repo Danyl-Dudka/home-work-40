@@ -26,18 +26,14 @@ function App() {
       }, [setUsers]);
   
   return (
-    <>
+        <div className='button-container'>
     <BrowserRouter>
     <Link to="/list"><ListButton users={users} setUsers={setUsers} isOpen={isListOpen} setIsOpen={openList}/></Link>
     <Link to="/add"><AddUserButton users={users} setUsers={setUsers} isOpen={isAddOpen} setIsOpen={openAdd} openList={openList}/></Link>
     <Routes>
     <Route path="/list" element={<ListButton users={users} setUsers={setUsers} isOpen={isListOpen} setIsOpen={openList}/>}/>
     <Route path="/add" element={<AddUserButton users={users} setUsers={setUsers} isOpen={isAddOpen} setIsOpen={openAdd} openList={openList}/>}/>
-    <div className='button-container'>
-    <ListButton users={users} setUsers={setUsers} isOpen={isListOpen} setIsOpen={openList}/>
-    <AddUserButton users={users} setUsers={setUsers} isOpen={isAddOpen} setIsOpen={openAdd} openList={openList}/>
     </div>
-    </>
   )
 }
 
